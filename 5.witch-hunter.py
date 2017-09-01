@@ -41,7 +41,7 @@ class Hunter:
         self.level = level
 
     def attack(self, witch, critical_strike):
-        base_damage = random.randint(1, 10) * self.level
+        base_damage = random.randint(25, 50) * self.level
         hunter_damage = base_damage * 2 if critical_strike else base_damage
         witch_damage = witch.witchcraft_attack()
 
@@ -73,7 +73,7 @@ def start_game():
                 print('Level up! {} level now'.format(hunter.level))
             else:
                 print('Hunter is taking time to recover')
-                time.sleep(1)
+                time.sleep(5)
         else:
             print('Hunter stop tracing')
 
