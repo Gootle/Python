@@ -1,6 +1,6 @@
 import random
 
-cash = 2000
+cash = 5000
 
 def create_winning_numbers():
     winning_numbers = set()
