@@ -15,18 +15,18 @@ class ToDoList:
             print('{}) {}'.format(index, task))
             
     def write_into_file(self):
-        with open(self.file_name, 'w') as file:
+        with open(self.file_name, 'w') as file: 
             for task in self.tasks:
                file.write('{}\n'.format(task))
 
     def add_task(self, task):
-        self.tasks.append(task)
+        self.tasks.append(task) #  append 家道最後
         self.write_into_file()
 
     def done_task(self, task_index):
-        task_exist = False
+        task_exist = False  # 仍有點不懂 (如果沒找到的話)
         for index, task in enumerate(self.tasks, start=1):
-            if index == int(task_index):
+            if index == int(task_index): #輸入task改為數字
                 self.tasks.remove(task)
                 print('{} completed.'.format(task))
                 task_exist = True
@@ -45,7 +45,7 @@ def run():
     while True:
         todolist = ToDoList('todolist.txt')
         cmd_detail = input('Enter cmd: ')
-        cmd = cmd_detail.split(' ', 1)[0]
+        cmd = cmd_detail.split(' ', 1)[0] #第0個位子的指令 
         if cmd == 'list':
             todolist.todo_list()
         elif cmd == 'todo':
